@@ -1,0 +1,5 @@
+[FATAL][user.go:47]2020/08/28 11:32:53 [invalid character 'a' looking for beginning of value]
+[FATAL][user.go:47]2020/08/28 11:33:21 [invalid character 'a' looking for beginning of value]
+[FATAL][user.go:47]2020/08/28 11:33:38 [invalid character 'a' looking for beginning of value]
+[FATAL][user.go:47]2020/08/28 11:35:03 [invalid character 'a' looking for beginning of value]
+[FATAL][user.go:47]2020/08/28 11:35:29 [invalid character 'a' looking for beginning of value]

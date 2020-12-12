@@ -1,0 +1,5 @@
+[FATAL][project.go:136]2020/08/19 16:07:18 [Error 1146: Table 'caracara.alarm_response' doesn't exist]
+[FATAL][models.go:27]2020/08/19 16:09:25 [Error 1045: Access denied for user 'root'@'222.178.10.134' (using password: YES)]
+[FATAL][project.go:136]2020/08/19 16:09:34 [sql: database is closed]
+[FATAL][project.go:136]2020/08/19 16:10:09 [Error 1146: Table 'caracara-dev.alarm_response' doesn't exist]
+[FATAL][project.go:136]2020/08/19 16:38:41 [Error 1146: Table 'caracara.alarm_response' doesn't exist]

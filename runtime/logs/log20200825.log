@@ -1,0 +1,4 @@
+[FATAL][project.go:280]2020/08/25 13:38:43 [Error 1292: Incorrect date value: '0000-00-00' for column 'project_finish_date' at row 1]
+[ERROR][project.go:20]2020/08/25 13:38:43 [Error 1292: Incorrect date value: '0000-00-00' for column 'project_finish_date' at row 1]
+[FATAL][project.go:326]2020/08/25 14:14:47 [Error 1054: Unknown column 'project_id' in 'where clause']
+[ERROR][project.go:69]2020/08/25 14:14:47 [Error 1054: Unknown column 'project_id' in 'where clause']

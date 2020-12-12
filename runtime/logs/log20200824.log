@@ -1,0 +1,2 @@
+[FATAL][project.go:280]2020/08/24 16:48:43 [Error 1406: Data too long for column 'pk_project_id' at row 1]
+[ERROR][project.go:20]2020/08/24 16:48:43 [Error 1406: Data too long for column 'pk_project_id' at row 1]

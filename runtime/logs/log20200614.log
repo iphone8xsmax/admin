@@ -1,0 +1,7 @@
+[INFO][config.go:25]2020/06/14 15:10:19 [Failed to parse `config.ini`,  open config.ini: The system cannot find the file specified.]
+[INFO][config.go:25]2020/06/14 15:12:13 [Failed to parse `config.ini`,  open config.ini: The system cannot find the file specified.]
+[INFO][config.go:25]2020/06/14 15:14:06 [Failed to parse `config.ini`,  open config.ini: The system cannot find the file specified.]
+[FATAL][models.go:26]2020/06/14 15:27:31 [2 Failed to get section 'databse': %v section "databse" does not exist]
+[FATAL][models.go:27]2020/06/14 15:33:25 [2  Failedto get section 'databse': %v section "databse" does not exist]
+[FATAL][config.go:68]2020/06/14 16:37:08 [2  Failedto get section 'databse': %v section "databse" does not exist]
+[FATAL][models.go:27]2020/06/14 16:38:27 [dial tcp: lookup http://www.zhxf.yuhualab.com:3307/: no such host]

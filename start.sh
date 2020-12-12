@@ -1,0 +1,1 @@
+cd /go/src/zhxf-v1/ && ./zhxf-v1

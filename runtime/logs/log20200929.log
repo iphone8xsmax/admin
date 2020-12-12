@@ -1,0 +1,2 @@
+[FATAL][models.go:27]2020/09/29 10:58:00 [dial tcp 39.98.122.209:3306: connectex: No connection could be made because the target machine actively refused it.]
+[FATAL][models.go:27]2020/09/29 11:01:43 [dial tcp 39.98.122.209:3306: connectex: No connection could be made because the target machine actively refused it.]

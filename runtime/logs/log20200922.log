@@ -1,0 +1,2 @@
+[INFO][udp.go:40]2020/09/22 15:00:54 [Error 1054: Unknown column 'recode_time' in 'field list']
+[INFO][udp.go:40]2020/09/22 15:01:57 [Error 1054: Unknown column 'recode_time' in 'field list']

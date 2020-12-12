@@ -1,0 +1,6 @@
+[ERROR][main.go:28]2020/10/22 11:17:21 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]
+[ERROR][main.go:28]2020/10/22 11:18:16 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]
+[ERROR][main.go:28]2020/10/22 11:21:32 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]
+[ERROR][main.go:28]2020/10/22 11:22:11 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]
+[ERROR][main.go:28]2020/10/22 11:24:09 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]
+[ERROR][main.go:28]2020/10/22 11:24:28 [listen tcp :8888: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.]

@@ -1,0 +1,6 @@
+[FATAL][project.go:279]2020/08/23 12:57:51 [Error 1054: Unknown column 'project_id' in 'field list']
+[ERROR][project.go:20]2020/08/23 12:57:51 [Error 1054: Unknown column 'project_id' in 'field list']
+[FATAL][project.go:279]2020/08/23 13:15:42 [Error 1292: Incorrect date value: '0000-00-00' for column 'project_finish_date' at row 1]
+[ERROR][project.go:20]2020/08/23 13:15:42 [Error 1292: Incorrect date value: '0000-00-00' for column 'project_finish_date' at row 1]
+[FATAL][project.go:279]2020/08/23 13:16:41 [Error 1062: Duplicate entry '0' for key 'info_project.PRIMARY']
+[ERROR][project.go:20]2020/08/23 13:16:41 [Error 1062: Duplicate entry '0' for key 'info_project.PRIMARY']
