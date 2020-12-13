@@ -1,0 +1,4 @@
+[FATAL][user.go:64]2020/12/13 20:00:46 [Error 1406: Data too long for column 'password' at row 1]
+[FATAL][user.go:75]2020/12/13 20:00:46 [sql: transaction has already been committed or rolled back]
+[FATAL][user.go:64]2020/12/13 20:00:54 [Error 1406: Data too long for column 'password' at row 1]
+[FATAL][user.go:75]2020/12/13 20:00:54 [sql: transaction has already been committed or rolled back]

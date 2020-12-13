@@ -25,8 +25,8 @@ func (User) TableName() string {
 }
 
 //创建用户
-func (u *User) Create(user User) error{
-	err := mysql.DB.Model(&u).Create(&user).Error
+func (u User) Create() error{
+	err := mysql.DB.Create(&u).Error
 	if err != nil{
 		logging.Info(err)
 		return err
@@ -99,3 +99,13 @@ func (u User) Logout(email, password string) bool {
 	return false
 }
 
+
+//验证邮箱是否重复
+func (u User)IsExistEmail(email string) bool {
+	var count int
+	mysql.DB.Model(&u).Where("email=?", email).Count(&count)
+	if count > 0{
+		return true
+	}
+	return false
+}

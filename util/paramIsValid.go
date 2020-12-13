@@ -9,3 +9,4 @@ func CheckEamil(email string) bool {
 	return reg.MatchString(email)
 }
 
+

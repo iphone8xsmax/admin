@@ -22,8 +22,8 @@ func (Role) TableName() string {
 }
 
 //创建角色
-func (r *Role) Create(role Role) error{
-	err := mysql.DB.Model(&r).Create(&role).Error
+func (r *Role) Create() error{
+	err := mysql.DB.Create(&r).Error
 	if err != nil{
 		logging.Info(err)
 		return err
@@ -32,8 +32,8 @@ func (r *Role) Create(role Role) error{
 }
 
 //更新角色
-func (r *Role) Update(role Role) error{
-	err := mysql.DB.Model(&r).Updates(role).Error
+func (r *Role) Update() error{
+	err := mysql.DB.Model(&r).Updates(r).Error
 	if err != nil{
 		logging.Info(err)
 		return err

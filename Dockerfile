@@ -7,11 +7,7 @@ ADD go.sum .
 RUN go mod download
 WORKDIR /go/release
 ADD . .
-RUN GOOS=linux CGO_ENABLED=0 go build -ldflags="-s -w" -installsuffix cgo -o myapp main.go
+RUN GOOS=linux CGO_ENABLED=0 go build -ldflags="-s -w" -installsuffix cgo -o zhxf main.go
 
-FROM scratch as prod
-COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-COPY --from=builder /go/release/gin_demo /
-COPY --from=builder /go/release/conf ./conf
 EXPOSE 8888
-CMD ["/myapp"]
+CMD ["/zhxf"]
