@@ -41,11 +41,11 @@ func InitRouter() *gin.Engine {
 		//2.更新用户部分字段
 		v1.POST("/user/update_field", user.UpdateFiledOfUser)
 		//3.用户详情
-		v1.POST("/user/find", user.FindUser)
+		v1.GET("/user/find", user.FindUser)
 		//4.用户列表
 		v1.GET("/user/search", user.SearchUser)
 		//5.用户拥有的菜单
-		v1.GET("/user/menu", user.MenuofUser)
+		v1.GET("/user/menu", user.MenuOfUser)
 		//6.退出登录
 		v1.POST("/user/logout", user.Logout)
 		//7.检查用户权限
