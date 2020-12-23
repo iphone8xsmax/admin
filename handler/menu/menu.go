@@ -94,15 +94,21 @@ func FindMenu(c *gin.Context)  {
 func SearchMenu(c *gin.Context)  {
 	param := c.Query("pid")
 	var menu models.Menu
+	var list = make(map[string]interface{})
+	//判断是否传入pid
 	if len(param) != 0{
 		 menu.PID, _ = strconv.Atoi(param)
 	}else{
 		menu.PID = -1
 	}
+	//获取数据
 	data := menu.Search()
+	//匹配返回的json格式
+	list["list"] = data
+
 	c.JSON(200, gin.H{
 		"code": 0,
 		"msg": "",
-		"date": data,
+		"date": list,
 	})
 }

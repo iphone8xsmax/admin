@@ -34,6 +34,20 @@ type MenuList struct {
 	UpdateTime 	string `json:"mtime"`
 }
 
+type SearchMenu struct {
+	ID	  	int			`json:"id"`		//主键ID
+	Status  int 		`json:"status"`   //状态{-1：删除；1：正常；}
+	PID			int		`json:"pid"`			//父级ID {0：顶级菜单；}
+	Name  		string 	`json:"name"` 		//菜单名称
+	Icon		string	`json:"icon"`		//菜单图标
+	Url     	string 	`json:"url"`   		//路由
+	Sort		int		`json:"sort"`		//排序（正序）
+
+	MTime 	string `json:"ctime"`
+	CTime 	string `json:"mtime"`
+	SubMenuList  []MenuList `json:"sub_menu_list"`
+}
+
 //创建菜单
 func (m Menu) Create() string{
 	var err error
@@ -91,39 +105,65 @@ func (m Menu) UpdateField() error{
 }
 
 //获取菜单列表
-func (m Menu) Search() []MenuList{
+func (m Menu) Search() []SearchMenu{
 	var menus []Menu
 	var menuList MenuList
 	var menuLists []MenuList
+	var searchMenu SearchMenu
+	var searchMenus []SearchMenu
+	//根据是否传入PID进行判断，不传入默认获取所有菜单
 	if m.PID != -1{
 		err := mysql.DB.Where("pid=?", m.PID).Find(&menus).Error
 		if err != nil{
 			logging.Info(err)
-			return menuLists
+			return searchMenus
 		}
 	}else{
 		err := mysql.DB.Find(&menus).Error
 		if err != nil{
 			logging.Info(err)
-			return menuLists
+			return searchMenus
 		}
 	}
+
 	for _, value := range menus{
-		menuList.ID = value.ID
-		menuList.Status = value.Status
-		menuList.PID = value.PID
-		menuList.Name = value.Name
-		menuList.Url = value.Url
-		menuList.Icon = value.Icon
-		menuList.Sort = value.Sort
+		searchMenu.ID = value.ID
+		searchMenu.Status = value.Status
+		searchMenu.PID = value.PID
+		searchMenu.Name = value.Name
+		searchMenu.Url = value.Url
+		searchMenu.Icon = value.Icon
+		searchMenu.Sort = value.Sort
 
-		menuList.CreateTime = value.CTime.Format("2006-01-02 15:04:05")
-		menuList.UpdateTime = value.MTime.Format("2006-01-02 15:04:05")
+		//获取二级菜单
+		err := mysql.DB.Where("pid=?", searchMenu.ID).Find(&menus).Error
+		if err != nil{
+			logging.Info(err)
+			return searchMenus
+		}
+		for _, value := range menus{
+			menuList.ID = value.ID
+			menuList.Status = value.Status
+			menuList.PID = value.PID
+			menuList.Name = value.Name
+			menuList.Url = value.Url
+			menuList.Icon = value.Icon
+			menuList.Sort = value.Sort
 
-		menuLists = append(menuLists, menuList)
+			menuList.CreateTime = value.CTime.Format("2006-01-02 15:04:05")
+			menuList.UpdateTime = value.MTime.Format("2006-01-02 15:04:05")
+
+			menuLists = append(menuLists, menuList)
+		}
+
+		searchMenu.SubMenuList = menuLists
+		searchMenu.CTime = value.CTime.Format("2006-01-02 15:04:05")
+		searchMenu.MTime = value.MTime.Format("2006-01-02 15:04:05")
+
+		searchMenus = append(searchMenus, searchMenu)
 	}
 
-	return menuLists
+	return searchMenus
 }
 
 //根据ID获取菜单列表

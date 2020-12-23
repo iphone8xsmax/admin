@@ -27,7 +27,7 @@ func InitRouter() *gin.Engine {
 	v1 := r.Group("/v1")
 
 	//使用token鉴权中间件
-//	caracara.Use(jwt.JWT())
+//	v1.Use(jwt.JWT())
 	{
 		//创建用户
 		v1.POST("/user/create", user.CreateUser)
